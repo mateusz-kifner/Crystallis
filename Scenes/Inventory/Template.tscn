@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Images/Special_Elite/Spetial_elite.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/Inventory/InventoryTemplate.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Inventory/Template.gd" type="Script" id=3]
+
+[node name="0" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="GridContainer" parent="CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+size = 1
+
+[node name="Control" type="Control" parent="CenterContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/Control"]
+margin_left = -137.15
+margin_top = -70.287
+margin_right = -75.15
+margin_bottom = -49.287
+custom_fonts/font = ExtResource( 1 )
+text = "Sword"
+__meta__ = {
+"_edit_use_anchors_": false
+}

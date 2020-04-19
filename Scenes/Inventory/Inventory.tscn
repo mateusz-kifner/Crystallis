@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Inventory/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Inventory/Inventory2.gd" type="Script" id=2]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory" type="GridContainer" parent="CenterContainer"]
+margin_left = 512.0
+margin_top = 150.0
+margin_right = 512.0
+margin_bottom = 150.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inventory2" type="GridContainer" parent="CenterContainer2"]
+margin_left = 512.0
+margin_top = 150.0
+margin_right = 512.0
+margin_bottom = 150.0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 5
+columns = 6
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

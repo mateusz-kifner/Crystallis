@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Models/Dungeon/Dungeon.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Models/Dungeon/DungeonItems.meshlib" type="MeshLibrary" id=3]
+[ext_resource path="res://Objects/Potion/1/Potion1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Potion/2/Potion2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Models/Light/torch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Potion/3/Potion3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Potion/4/Potion4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Prefabs/Desk_Chair.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Environment" id=1]
+background_energy = 0.0
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+fog_color = Color( 0.164706, 0.164706, 0.164706, 1 )
+fog_depth_begin = 3.0
+fog_depth_end = 40.0
+ssao_radius = 128.0
+ssao_intensity = 128.0
+adjustment_brightness = 0.8
+adjustment_contrast = 1.2
+adjustment_saturation = 0.9
+
+[node name="TestLevel" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293, 1.64648, 0 )
+
+[node name="Env" type="Spatial" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Env"]
+environment = SubResource( 1 )
+
+[node name="Map" type="GridMap" parent="Env"]
+mesh_library = ExtResource( 1 )
+data = {
+"cells": PoolIntArray( 5, 0, 1048576, 65533, 0, 1441792, -65536, 0, 2, -65535, 0, 2, -65534, 0, 536870914, -65533, 0, 2, -65532, 0, 536870914, -65531, 0, 536870914, -3, 0, 2, -2, 0, 2, -1, 0, 2, 5, 1, 1048576, 65533, 1, 1441792, -65536, 1, 2, -65535, 1, 2, -65534, 1, 2, -65533, 1, 2, -65532, 1, 2, -65531, 1, 2, -3, 1, 2, -2, 1, 2, -1, 1, 2, 0, 2, 0, 5, 2, 537919488, 65533, 2, 1, 65534, 2, 0, 65535, 2, 0, -65536, 2, 2, -65535, 2, 2, -65534, 2, 536870914, -65533, 2, 2, -65532, 2, 2, -65531, 2, 2, -3, 2, 2, -2, 2, 536870914, -1, 2, 2, 1, 3, 1441792, 5, 3, 537919488, 131073, 3, 655363, 131074, 3, 655363, 131075, 3, 655363, 131076, 3, 655363, -65535, 3, 2, -65534, 3, 2, -65533, 3, 2, -65532, 3, 2, -65531, 3, 2, 1, 4, 1, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 1048577, 131072, 4, 655363, 131073, 4, 655363, 131074, 4, 655363, 131075, 4, 655363, -65535, 4, 2, -65534, 4, 2, -65533, 4, 2, -65532, 4, 2, -65531, 4, 2, 0, 65530, 655360, 1, 65530, 655360, 2, 65530, 655360, 3, 65530, 655360, 4, 65530, 655360, 5, 65530, 655361, 65533, 65530, 1441793, 65534, 65530, 655360, 65535, 65530, 655360, -65536, 65530, 2, -65535, 65530, 2, -65534, 65530, 2, -65533, 65530, 2, -65532, 65530, 2, -65531, 65530, 2, -3, 65530, 2, -2, 65530, 2, -1, 65530, 2, 5, 65531, 1048576, 65533, 65531, 1441792, -65536, 65531, 2, -65535, 65531, 2, -65534, 65531, 2, -65533, 65531, 2, -65532, 65531, 2, -65531, 65531, 2, -3, 65531, 2, -2, 65531, 2, -1, 65531, 2, 5, 65532, 1048576, 65533, 65532, 1441792, -65536, 65532, 2, -65535, 65532, 2, -65534, 65532, 2, -65533, 65532, 2, -65532, 65532, 2, -65531, 65532, 2, -3, 65532, 2, -2, 65532, 2, -1, 65532, 2, 5, 65533, 1048576, 65533, 65533, 1441792, -65536, 65533, 2, -65535, 65533, 2, -65534, 65533, 2, -65533, 65533, 2, -65532, 65533, 2, -65531, 65533, 2, -3, 65533, 2, -2, 65533, 2, -1, 65533, 2, 5, 65534, 1048576, 65533, 65534, 1441792, -65536, 65534, 2, -65535, 65534, 2, -65534, 65534, 2, -65533, 65534, 2, -65532, 65534, 2, -65531, 65534, 2, -3, 65534, 2, -2, 65534, 2, -1, 65534, 2, 5, 65535, 1048576, 65533, 65535, 1441792, -65536, 65535, 2, -65535, 65535, 2, -65534, 65535, 2, -65533, 65535, 2, -65532, 65535, 2, -65531, 65535, 2, -3, 65535, 2, -2, 65535, 2, -1, 65535, 2 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="MapAdditions" type="GridMap" parent="Env"]
+mesh_library = ExtResource( 3 )
+data = {
+"cells": PoolIntArray( 0, 3, 2, 1, 65533, 0, 3, 65533, 0, 1, 65535, 0, 3, 65535, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Items" type="Spatial" parent="."]
+
+[node name="RigidBody4" parent="Items" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42423, 2.63733, 8.52919 )
+
+[node name="Potion2" parent="Items" instance=ExtResource( 5 )]
+transform = Transform( 0.92428, 0.381665, 0.00623556, 0, 0.0163356, -0.999867, -0.381716, 0.924157, 0.0150987, 9.99325, 2.66366, 8.64771 )
+
+[node name="Potion6" parent="Items" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 8.65188, 2.5655, 8.60926 )
+
+[node name="RigidBody6" parent="Items" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.571, 2.54533, 8.75659 )
+
+[node name="Lights" type="Spatial" parent="."]
+
+[node name="torch" parent="Lights" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6571, 2.87835, 3.93703 )
+
+[node name="torch2" parent="Lights" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68836, 2.87835, -11.6533 )
+
+[node name="torch3" parent="Lights" instance=ExtResource( 6 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -5.63154, 2.87835, 3.93703 )
+
+[node name="torch4" parent="Lights" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.6571, 2.87835, -8.52596 )
+
+[node name="Desk_Chair" parent="." instance=ExtResource( 9 )]

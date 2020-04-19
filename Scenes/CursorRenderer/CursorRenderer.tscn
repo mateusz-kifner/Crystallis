@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/CursorRenderer/CursorRenderer.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/CursorRenderer/Cursor.png" type="Texture" id=3]
+
+[node name="CursorRenderer" type="Viewport"]
+size = Vector2( 256, 256 )
+transparent_bg = true
+handle_input_locally = false
+hdr = false
+disable_3d = true
+usage = 1
+gui_disable_input = true
+gui_snap_controls_to_pixels = false
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 256.0
+margin_bottom = 256.0
+
+[node name="Item" type="TextureRect" parent="Control"]
+margin_right = 70.0
+margin_bottom = 70.0
+
+[node name="Cursor" type="TextureRect" parent="Control"]
+margin_right = 24.0
+margin_bottom = 24.0
+texture = ExtResource( 3 )
+
+[node name="Count" type="Label" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -55.0
+margin_bottom = -56.0
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

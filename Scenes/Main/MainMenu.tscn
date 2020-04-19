@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Main/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Images/Special_Elite/Spetial_elite.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Images/Special_Elite/SpecialElite-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Crystalis_cover_art.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 3 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="CenterContainer"]
+margin_left = 362.0
+margin_top = 200.0
+margin_right = 662.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 300, 200 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -646.891
+margin_top = -218.088
+margin_right = -63.8909
+margin_bottom = 78.9117
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="CenterContainer/Control/Buttons"]
+margin_right = 300.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Play"
+
+[node name="Button2" type="Button" parent="CenterContainer/Control/Buttons"]
+margin_top = 73.0
+margin_right = 300.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="CenterContainer/Control/Buttons"]
+margin_top = 146.0
+margin_right = 300.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Control" parent="CenterContainer"]
+visible = false
+margin_left = 312.0
+margin_top = 100.0
+margin_right = 712.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 400, 400 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/Credits"]
+margin_right = 300.0
+margin_bottom = 334.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[b]Programming, Models:[/b]
+Mateusz Kifner
+
+[b]Models, Character, Design, Maps:[/b]
+SzaQ
+
+[b]Models, Maps:[/b]
+Gustaw Smętek
+Miki"
+text = "Programming, Models:
+Mateusz Kifner
+
+Models, Character, Design, Maps:
+SzaQ
+
+Models, Maps:
+Gustaw Smętek
+Miki"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="CenterContainer/Credits"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -150.0
+margin_top = -27.0
+margin_right = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="Label" parent="CenterContainer"]
+visible = false
+margin_left = 457.0
+margin_top = 289.0
+margin_right = 567.0
+margin_bottom = 310.0
+custom_fonts/font = ExtResource( 2 )
+text = "Loading ..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="pressed" from="CenterContainer/Control/Buttons/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/Control/Buttons/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="CenterContainer/Control/Buttons/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="CenterContainer/Credits/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

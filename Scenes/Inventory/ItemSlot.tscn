@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Inventory/ItemSlot.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Inventory/ItemSlot.stylebox" type="StyleBox" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+
+[node name="Item" type="PanelContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/panel = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 72.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sprite" type="TextureRect" parent="VBoxContainer/CenterContainer"]
+margin_left = 50.0
+margin_top = 36.0
+margin_right = 50.0
+margin_bottom = 36.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 76.0
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 1
+custom_styles/normal = SubResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 100.0
+margin_bottom = 100.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="Control"]
+anchor_right = 0.87
+anchor_bottom = 0.81
+margin_left = 75.0
+margin_top = 55.0
+margin_right = -4.00001
+margin_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

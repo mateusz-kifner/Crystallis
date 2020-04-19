@@ -1,0 +1,203 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Sword/1/sword.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+height = 2.0
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.826522, 1.89135, 1.13453 )
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Head/Camera:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.145156, -0.25, 0, 0.25, 0, -0.0548475, -0.25, 0, 0.25, 0, -0.0490121, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Head/Camera:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0125153, -0.25, 0, 0.25, 0, -0.0344837, -0.25, 0, 0.25, 0, -0.0739608, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Head/Camera:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7, 1 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "attack"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Head/Camera/Weapon:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.788, -0.25, 0, 0.24, -0.160297, 0.615, -0.25, 0, 0.25, 0, 0.788, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Head/Camera/Weapon:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -0.761, -0.25, 0, 0.08, -0.000552535, -0.634208, -0.16, -0.0449075, 0.25, 0, -0.761, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Head/Camera/Weapon:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -0.944, -0.25, 0, 0.25, 0, -1.049, -0.25, 0, 0.25, 0, -0.944, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Head/Camera/Weapon:rotation_degrees:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -28.513, -0.25, 0, 0.25, 0, -53.207, -0.25, 0, 0.25, 0, -28.513, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Head/Camera/Weapon:rotation_degrees:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -4.00373e-07, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -4.00373e-07, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Head/Camera/Weapon:rotation_degrees:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -78.11, -0.25, 0, 0.25, 0, -67.123, -0.25, 0, 0.25, 0, -78.11, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 1 )
+}
+
+[sub_resource type="Animation" id=5]
+length = 2.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Head/Camera/Weapon:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.788, -0.25, 0, 0.25, 0, 0.788, -0.25, 0, 0.25, 0, 0.788, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Head/Camera/Weapon:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -0.761, -0.25, 0, 0.25, 0, -0.738647, -0.25, 0, 0.25, 0, -0.761, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Head/Camera/Weapon:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -0.944, -0.25, 0, 0.25, 0, -0.944, -0.25, 0, 0.25, 0, -0.944, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 2 )
+}
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionLevel" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Head" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.3 )
+
+[node name="Camera" type="Camera" parent="Head"]
+
+[node name="InteractionDetector" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -3, 0 )
+collision_mask = 3
+collide_with_areas = true
+
+[node name="DropPosition" type="Position3D" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.33 )
+
+[node name="Weapon" type="Position3D" parent="Head/Camera"]
+transform = Transform( 0.206033, 0.978545, -6.14026e-09, -0.859856, 0.181043, 0.477358, 0.467116, -0.0983517, 0.878709, 0.788, -0.752268, -0.944 )
+
+[node name="sword" parent="Head/Camera/Weapon" instance=ExtResource( 2 )]
+
+[node name="Magic" type="Position3D" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.944 )
+
+[node name="Position3D" type="Position3D" parent="Head/Camera/Magic"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )
+
+[node name="WeaponHit" type="Area" parent="Head"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="Head/WeaponHit"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33818, -1.398 )
+shape = SubResource( 2 )
+
+[node name="FloorDetector" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.2, 0 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 5.0
+anims/damage = SubResource( 3 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 4 )
+anims/idle = SubResource( 5 )
+
+[node name="Magic" type="Timer" parent="."]
+
+[node name="Attack" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Magic" to="." method="_on_Magic_timeout"]
+[connection signal="timeout" from="Attack" to="." method="_on_Attack_timeout"]
