@@ -23,7 +23,12 @@ export var inventory_open = false
 
 export var levels = {
 	2:"res://Scenes/Level1/Level1.tscn",
-	1:"res://Scenes/Level2/Level2.tscn"
+	1:"res://Scenes/Level2/Level2.tscn",
+	3:"res://Scenes/Level3/Level3.tscn",
+	4:"res://Scenes/Level4/Level4.tscn",
+	5:"res://Scenes/Level5/Level5.tscn",
+
+	
 }
 var pause_count = 0
 export var custom_inventory_count =1

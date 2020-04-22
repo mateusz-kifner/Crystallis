@@ -47,3 +47,30 @@ func _on_Button2_pressed():
 func _on_Button4_pressed():
 	$CenterContainer/Control.visible = true
 	$CenterContainer/Credits.visible = false
+
+
+func _on_1_pressed():
+	$CenterContainer/Control.visible = false
+	$CenterContainer/Loading.visible =true
+	$Timer.start(3)
+	yield(get_tree(),"idle_frame")
+	yield(get_tree(),"idle_frame")
+	LocalPlayer.set_level(3)
+
+func _on_2_pressed():
+	$CenterContainer/Control.visible = false
+	$CenterContainer/Loading.visible =true
+	$Timer.start(3)
+	yield(get_tree(),"idle_frame")
+	yield(get_tree(),"idle_frame")
+	LocalPlayer.set_level(4)
+	
+	
+	
+func _on_3_pressed():
+	$CenterContainer/Control.visible = false
+	$CenterContainer/Loading.visible =true
+	$Timer.start(3)
+	yield(get_tree(),"idle_frame")
+	yield(get_tree(),"idle_frame")
+	LocalPlayer.set_level(5)
