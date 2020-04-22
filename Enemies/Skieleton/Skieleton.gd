@@ -10,6 +10,7 @@ export var health = 50
 
 var player
 onready var skieleton = $Armature001
+onready var HAMDS = $Armature001/Skeleton/HAMDS
 var angle = 0
 var attack
 var dead = false
@@ -140,6 +141,7 @@ func _on_Area_body_exited(body):
 		attack = false
 
 func _on_Damage_timeout():
+	HAMDS.material_override = null
 	if is_damaged :
 		is_damaged = false
 	if dead:
@@ -148,6 +150,8 @@ func _on_Damage_timeout():
 		player.damage(DAMAGE)
 
 func damage(amount:int):
+	HAMDS.material_override = load("res://Materials/Bones_Red.material")
+	
 	if health -amount > 0:
 		health -= amount
 		print("skieleton", health)

@@ -8,7 +8,7 @@ radius = 0.5
 height = 2.0
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.826522, 1.89135, 1.13453 )
+extents = Vector3( 0.826522, 2.09131, 0.910254 )
 
 [sub_resource type="Animation" id=3]
 tracks/0/type = "bezier"
@@ -152,9 +152,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.3 )
 [node name="Camera" type="Camera" parent="Head"]
 
 [node name="InteractionDetector" type="RayCast" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0.310526 )
 enabled = true
-cast_to = Vector3( 0, -3, 0 )
+cast_to = Vector3( 0, -5, 0 )
 collision_mask = 3
 collide_with_areas = true
 
@@ -177,7 +177,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape" type="CollisionShape" parent="Head/WeaponHit"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33818, -1.398 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33818, -1.24145 )
 shape = SubResource( 2 )
 
 [node name="FloorDetector" type="RayCast" parent="."]

@@ -6,7 +6,8 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if LocalPlayer.inventoryName == "" :
+	yield(get_tree(),"idle_frame")
+	if not(LocalPlayer.inventory_open):
 		yield(get_tree(),"idle_frame")
 		if Input.is_action_just_pressed("open_menu") and levels.get_child_count() > 0:
 			visible = not(visible)

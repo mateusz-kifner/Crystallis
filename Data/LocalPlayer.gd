@@ -56,6 +56,7 @@ func _ready():
 func openInventory(name:String):
 	if inventoryName == "":
 		inventoryName = name
+		inventory_open = true
 		var inv = Items.inventory_instances.values()
 		for i in range(2,inv.size()):
 			inv[i].get_parent().visible = false
@@ -66,6 +67,7 @@ func openInventory(name:String):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pause(true)
 	else:
+		inventory_open = false
 		inventoryName = ""
 		get_node(guiInventory).visible = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -86,7 +88,7 @@ func changeCursor(cursor:int,state):
 func _process(delta):
 	if(Input.is_action_just_pressed(ACTION_OPEN_INVENTORY)):
 		LocalPlayer.openInventory("player_hotbar")
-	if(inventoryName != "" and Input.is_action_just_pressed(ACTION_CLOSE_INVENTORY)):
+	if(inventory_open and Input.is_action_just_pressed(ACTION_CLOSE_INVENTORY)):
 		LocalPlayer.openInventory("player_hotbar")
 
 func set_health(val):

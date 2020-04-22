@@ -63,7 +63,7 @@ func _physics_process(delta):
 		use_item(2)
 	if OS.is_debug_build() and Input.is_action_just_pressed("quit"):
 		LocalPlayer.set_level(2)
-	if OS.is_debug_build() and Input.is_action_just_pressed("debug_fly"):
+	if Input.is_action_just_pressed("debug_fly"):
 		is_fly = not(is_fly)
 
 func walk(delta):
@@ -164,7 +164,7 @@ func interact():
 	if(Input.is_action_just_pressed(ACTION_INTERACT)):
 
 		if collider is InteractiveObject:
-			if collider is InventoryObject and LocalPlayer.inventoryName == "":
+			if collider is InventoryObject:
 				LocalPlayer.openInventory(collider.inventory_name)
 			else:
 				Items.inventory_instances["player_backpack"].add_item(collider.itemId,collider.count)

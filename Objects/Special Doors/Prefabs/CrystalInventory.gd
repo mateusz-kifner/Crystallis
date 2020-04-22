@@ -13,8 +13,8 @@ func _ready():
 	inventory.label = "Crystal Door"
 	inventory_id = LocalPlayer.custom_inventory_count 
 	LocalPlayer.custom_inventory_count +=1
-	inventory.get_node("CenterContainer/Inventory").inventory_name = "crystal"+str(inventory_id)
-	inventory_name =  "crystal"+str(inventory_id)
+	inventory.get_node("CenterContainer/Inventory").inventory_name = "crystal"+str(inventory_id*crystalId)
+	inventory_name =  "crystal"+str(inventory_id*crystalId)
 	inventory.get_node("CenterContainer/Inventory").register()
 	get_node(LocalPlayer.customInventory).add_child(inventory)
 	print("inv num",inventory_name)
