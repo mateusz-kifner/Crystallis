@@ -2,6 +2,10 @@
 Godot Wild Jam #20 entry
 [Itch.io](https://kifner-mateusz.itch.io/crystallis)
 
+![Cover art](Crystalis_cover_art.png)
+
+
+
 Authors:
 
 Mateusz Kifner
